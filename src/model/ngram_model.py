@@ -65,6 +65,7 @@ class NGramModel:
     def save_model(self, model_path, vocab_path):
         """Serializes the model and vocabulary to JSON files."""
         os.makedirs(os.path.dirname(model_path), exist_ok=True)
+        os.makedirs(os.path.dirname(vocab_path), exist_ok=True)
         with open(model_path, 'w', encoding='utf-8') as f:
             json.dump(self.model, f, indent=4)
         with open(vocab_path, 'w', encoding='utf-8') as f:
